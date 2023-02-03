@@ -52,7 +52,7 @@ fun PhotoPickerDemoScreen() {
     //The launcher we will use for the PickVisualMedia contract.
     //When .launch()ed, this will display the photo picker.
     val launcher = rememberLauncherForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
-        //When the user has selected a photo, its URL is returned here
+        //When the user has selected a photo, its URI is returned here
         photoUri = uri
     }
 
@@ -72,7 +72,7 @@ fun PhotoPickerDemoScreen() {
         }
             
         if (photoUri != null) {
-            //Use COIL to display the selected image
+            //Use Coil to display the selected image
             val painter = rememberAsyncImagePainter(
                 ImageRequest
                     .Builder(LocalContext.current)
